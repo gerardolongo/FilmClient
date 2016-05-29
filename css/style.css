@@ -1,0 +1,28 @@
+input[type="text"],input[type="number"]  {
+	text-transform: uppercase;
+	width:150px;
+}
+
+.navbar{
+    background-color: red;
+    border-color: black;
+}
+
+.table-responsive
+{
+	width:auto;
+}
+
+#repeatSelect
+{
+	width:auto;
+}
+
+#alert
+{
+	margin-top: 100px;
+}
+
+#repeatSelect{
+	width:30%;
+}

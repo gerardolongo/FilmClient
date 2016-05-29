@@ -1,0 +1,34 @@
+<form ng-submit="search()">
+	<div class="container">
+		<div class="row" id="login-container">
+			<div class="span8 offset4">
+				<md-input-container>
+					<input type="number" ng-model="year" placeholder="Anno" min="1910" max="2020" required/>
+				</md-input-container>
+				<md-button type="submit" class="md-raised md-primary"> Cerca </md-button>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Titolo</th>
+							<th>Anno</th>
+							<th>Durata</th>
+							<th>Regista</th>
+							<th >Lingua</th>
+							<th >Fonte</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="film in filmByYear | orderBy:'year'">
+							<td>{{ film.title }}</td>
+							<td>{{ film.year }}</td>
+							<td>{{ film.running_time }}</td>
+							<td>{{ film.director }}</td>
+							<td>{{ film.lang }}</td>
+							<td>{{ film.source }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</form>

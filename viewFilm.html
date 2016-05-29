@@ -1,0 +1,30 @@
+<!-- metti in una direttiva -->
+<div class="form-group">
+	<div class="input-group">
+		<div class="input-group-addon"><i class="fa fa-search"></i></div>
+		<input type="text" class="form-control" placeholder="Filtra film" ng-model="title">
+	</div>
+</div>
+
+<table class="table table-striped" ng-controller="viewController">
+	<thead>
+		<tr>
+			<th>Titolo</th>
+			<th>Anno</th>
+			<th>Durata</th>
+			<th >Regista</th>
+			<th >Lingua</th>
+			<th >Fonte</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="film in films | orderBy:'year' | filter:title ">
+			<td filter="{ title: 'text'}">{{ film.title }}</td>
+			<td>{{ film.year }}</td>
+			<td>{{ film.running_time }}</td>
+			<td>{{ film.director }}</td>
+			<td>{{ film.lang }}</td>
+			<td>{{ film.source }}</td>
+		</tr>
+	</tbody>
+</table>

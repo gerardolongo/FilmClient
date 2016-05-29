@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	  <!-- Include the AngularJS library -->
+  	<script type="text/javascript" src="js/angular.min.js"></script>
+  	<script src="js/angular-route.js" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  </head>
+  <body ng-app="ForecastApp">
+		<div class="main">
+			<nav id="myNavbar" class="navbar navbar-inverse" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#addFilm">Inserisci</a></li>
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle">Ricerca <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"></a></li>
+								<li><a href="#viewAll">Tutti</a></li>
+								<li><a href="#viewByYear">Anno</a></li>
+								<li><a href="#viewByTitle">Titolo</a></li>
+								<li><a href="#viewByDirector">Regista</a></li>
+								<!-- <li class="divider"></li>
+								<li><a href="#">Trash</a></li> -->
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+			<br/>
+			<br/>
+			<div class="col-md-9">
+				 <div ng-view></div>
+			</div>
+		</div>
+
+
+
+    <!-- Modules -->
+	<script src="js/app.js"></script>
+
+	<!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+	<script src="js/controllers/ViewController.js"></script>
+	<script src="js/controllers/ViewByTitleController.js"></script>
+	<script src="js/controllers/ViewByYearController.js"></script>
+	<script src="js/controllers/ViewByDirectorController.js"></script>
+	<script src="js/controllers/AddFilmController.js"></script>
+
+    <!-- Services -->
+	<script src="js/services/forecast.js"></script>
+
+    <!-- Directives -->
+
+	<!--  Utility -->
+	<script src="js/utility.js"></script>
+
+  </body>
+</html>
