@@ -1,4 +1,15 @@
+
+
 var app = angular.module('ForecastApp', ['ngRoute','ngMessages','ngMaterial']);
+
+
+
+app.config(function($mdThemingProvider) {
+	$mdThemingProvider.theme('customTheme')
+		.primaryPalette('grey')
+		.accentPalette('orange')
+		.warnPalette('red');
+});
 
 app.config(function($routeProvider) {
     $routeProvider.
