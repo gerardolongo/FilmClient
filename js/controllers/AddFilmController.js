@@ -38,9 +38,7 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
 
         var parameter = JSON.stringify({title:$scope.title, year:$scope.year,
             running_time:$scope.running_time, director:director, lang:$scope.lang, source: $scope.data.repeatSelect });
-
-
-
+        
         $http.post(server, parameter).success(function(data, status, headers, config) {
             if(checkData(data))
             {
