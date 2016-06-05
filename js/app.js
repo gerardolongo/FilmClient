@@ -1,11 +1,11 @@
-var app = angular.module('ForecastApp', ['ngRoute','ngMessages','ngMaterial']);
+var app = angular.module('ForecastApp', ['ngRoute','ngMessages','ngMaterial','ngResource']);
 
 
 app.config(function($routeProvider) {
     $routeProvider.
       when('/', {
           templateUrl: 'home.html',
-          controller: 'homeController'
+          controller: 'FeedCtrl'
       }).
 	  when('/viewAll', {
 		 templateUrl: 'viewFilm.html',
