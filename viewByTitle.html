@@ -28,6 +28,15 @@
 						</tr>
 					</tbody>
 				</table>
+				<div ng-hide="filmDeleted">
+					<div>
+						{{desc}}
+					</div>
+					<br/>
+					<div>
+						<img ng-src={{img}} />
+					</div>
+				</div>
 				<md-button type="submit" ng-hide="!foundFilm" class="md-raised md-primary" ng-click="deleteFilm(film._id)"> Elimina </md-button>
 				<!--
 				<div id="alert" class="alert alert-info" ng-show="filmDeleted" ng-hide="title!=''">
