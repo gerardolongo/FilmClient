@@ -26,3 +26,35 @@ input[type="text"],input[type="number"]  {
 #repeatSelect{
 	width:30%;
 }
+
+.playbill {
+	float:left;
+}
+
+.plotContainer{
+	margin-left: 150px;
+	float:left;
+	margin-right: auto;
+}
+
+.plot{
+	width:500px;
+
+}
+
+#feedContainer{
+	width: 80%;
+	height: auto;
+	margin-left:10%;
+	font-size:5%;
+}
+
+#feedContainer p{
+	font-size:medium;
+}
+
+#feedContainer img{
+	width: 50%;
+	height: 50%;
+}
+

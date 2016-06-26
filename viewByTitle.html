@@ -4,40 +4,39 @@
 			<div class="span8 offset4">
 				<md-input-container>
 					<input type="text" ng-model="title" placeholder="Titolo" ng-change="title=title.toUpperCase();" required />
-				</md-input-container>
-				<md-button type="submit" class="md-raised md-primary"> Cerca </md-button>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Titolo</th>
-							<th>Anno</th>
-							<th>Durata</th>
-							<th>Regista</th>
-							<th >Lingua</th>
-							<th >Fonte</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-style="display">
-							<td>{{film.title}}</td>
-							<td>{{film.year}}</td>
-							<td>{{film.running_time}}</td>
-							<td>{{film.director}}</td>
-							<td>{{film.lang}}</td>
-							<td>{{film.source}}</td>
-						</tr>
-					</tbody>
-				</table>
+					<md-button type="submit" class="md-raised md-primary"> Cerca </md-button><br/>
+                    <md-button type="submit" ng-hide="!foundFilm" class="md-raised md-primary" ng-click="deleteFilm(film._id)"> Elimina </md-button>
+                </md-input-container>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Titolo</th>
+                        <th>Anno</th>
+                        <th>Durata</th>
+                        <th>Regista</th>
+                        <th >Lingua</th>
+                        <th >Fonte</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-style="display">
+                        <td>{{film.title}}</td>
+                        <td>{{film.year}}</td>
+                        <td>{{film.running_time}}</td>
+                        <td>{{film.director}}</td>
+                        <td>{{film.lang}}</td>
+                        <td>{{film.source}}</td>
+                    </tr>
+                    </tbody>
+                </table>
 				<div ng-hide="filmDeleted">
-					<div>
-						{{desc}}
-					</div>
-					<br/>
-					<div>
-						<img ng-src={{img}} />
+                    <div class="playbill">
+                        <img ng-src={{img}} ng-show="img != ''"/>
+                    </div>
+					<div class="plotContainer">
+						<p class="plot">{{desc}}</p>
 					</div>
 				</div>
-				<md-button type="submit" ng-hide="!foundFilm" class="md-raised md-primary" ng-click="deleteFilm(film._id)"> Elimina </md-button>
 				<!--
 				<div id="alert" class="alert alert-info" ng-show="filmDeleted" ng-hide="title!=''">
 					<h2 > Cancellazione avvenuta con successo </h2>

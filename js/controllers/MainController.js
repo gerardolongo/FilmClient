@@ -5,23 +5,26 @@
 //  });
 //});
 
+//title: 'Cineblog', url: 'http://feeds.blogo.it/cineblog/it'
+
 
 app.factory('FeedLoader', function ($resource) {
         return $resource('http://ajax.googleapis.com/ajax/services/feed/load', {}, {
             fetch: { method: 'JSONP', params: {v: '1.0', callback: 'JSON_CALLBACK'} }
         });
     })
-    .service('FeedList', function ($rootScope, FeedLoader) {
+    .service('FeedList', function ($rootScope,FeedLoader,$sce) {
         this.get = function() {
             var feeds = [];
             var feedSources = [
-                {title: 'Cineblog', url: 'http://feeds.blogo.it/cineblog/it'},
-                           ];
+                {},
+                {title: 'ScreenWeek', url: 'https://blog.screenweek.it/feed'}];
             if (feeds.length === 0) {
                 for (var i=0; i<feedSources.length; i++) {
-                    FeedLoader.fetch({q: feedSources[i].url, num: 20}, {}, function (data) {
+                    FeedLoader.fetch({q: feedSources[i].url, num: 5}, {}, function (data) {
                         var feed = data.responseData.feed;
                         feeds.push(feed);
+                        console.log(feed);
                     });
                 }
             }

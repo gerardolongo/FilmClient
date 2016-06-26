@@ -1,8 +1,9 @@
 <div ng-controller="FeedCtrl">
-    <div ng-repeat="feed in feeds | orderBy:'title'">
+    <div class="container" ng-repeat="feed in feeds | orderBy:'title'">
         <h2><a href="{{feed.link}}" target="_blank">{{feed.title}}</a></h2>
-        <p><span ng-repeat="item in feed.entries">
-            <a href="{{item.link}}" target="_blank">{{item.title}}</a> (<span>{{item.publishedDate | date:'d-MM-yyyy HH:mm'}}</span>)<br />
-        </span></p>
+        <span ng-repeat="item in feed.entries" >
+            <!--<a ng-bind-html="item.title" href="{{item.link}}" target="_blank"></a> (<span>{{item.publishedDate | date:'d-MM-yyyy'}}</span>)<br />-->
+            <div class="jumbotron" id="feedContainer" ng-bind-html="item.content"></div>
+        </span>
     </div>
 </div>

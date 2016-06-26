@@ -3,7 +3,7 @@
  */
 
 
-app.controller('viewByTitleController',function($scope,$http,$mdToast){
+app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
 
     $scope.displayElement = function () {
         $scope.display = {
@@ -14,32 +14,38 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast){
     $scope.displayElement();
 
     $scope.search = function (){
-        $http.get(server + '/title/' + $scope.title)
-            .success(function(data, status, headers, config) {
-                if(data == "") {
-                    $scope.film = null;
-                    $scope.foundFilm = false;
-                    $scope.desc = "";
-                    $scope.img = "";
-                    $scope.showToast("Film non trovato");
-                }
-                else {
-                    $http.get("http://127.0.0.1:2380/film/scraping/mymovies/" + data.title)
-                        .success(function(data, status, headers, config) {
-                            var elem =JSON.stringify(data);
-                            $scope.desc = data.desc;
-                            $scope.img = data.img;
-                        }).error(function(data, status, headers, config) {
-                        console.log("No data found..");
-                    });
 
-                    $scope.foundFilm = true;
-                    $scope.display = "{display:block}";
-                    $scope.film = data;
-                }
+        $http.get(server + '/scraping/mymovies/' + $scope.title)
+            .success(function(data, status, headers, config) {
+                $timeout(callAtTimeout, 7000);
+                var desc = data.desc;
+                var img = data.img;
+                $http.get(server + '/title/' + $scope.title)
+                    .success(function(data, status, headers, config) {
+                        if(data == "") {
+                            $scope.film = null;
+                            $scope.foundFilm = false;
+                            $scope.desc = "";
+                            $scope.img = "";
+                            $scope.showToast("Film non trovato");
+                        }
+                        else {
+                            $scope.foundFilm = true;
+                            $scope.display = "{display:block}";
+                            $scope.film = data;
+                            $scope.desc = desc;
+                            $scope.img = img;
+                        }
+                    }).error(function(data, status, headers, config) {
+                    console.log("No data found..");
+                });
             }).error(function(data, status, headers, config) {
             console.log("No data found..");
         });
+    }
+
+    function callAtTimeout() {
+        console.log("Timeout occurred");
     }
 
 
