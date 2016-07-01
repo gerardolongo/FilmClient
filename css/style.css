@@ -58,3 +58,13 @@ input[type="text"],input[type="number"]  {
 	height: 50%;
 }
 
+
+#viewAll
+{
+	margin-left:10%;
+}
+
+#viewAll img{
+	max-height: 200px;
+}
+

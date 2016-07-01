@@ -1,4 +1,4 @@
-app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$mdToast, $document){
+app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$mdToast){
 
     var self = this;
 
@@ -36,30 +36,50 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
         else
             director = self.selectedItem.display;
 
-        var parameter = JSON.stringify({title:$scope.title, year:$scope.year,
-            running_time:$scope.running_time, director:director, lang:$scope.lang, source: $scope.data.repeatSelect });
-        
-        $http.post(server, parameter).success(function(data, status, headers, config) {
-            if(checkData(data))
-            {
-                $scope.showToast("Inserimento avvenuto con successo");
-            }
-            else
-                $scope.showToast(data.error);
+        $http.get(server + '/scraping/mymovies/' + $scope.title)
+            .success(function(data, status, headers, config) {
+                $timeout(callAtTimeout, 7000);
+                var desc = data.desc;
+                var img = data.img;
+                var parameter = JSON.stringify({title:$scope.title, year:$scope.year,
+                    running_time:$scope.running_time, director:director, lang:$scope.lang, source: $scope.data.repeatSelect
+                    ,desc:desc, img:img});
 
-            $scope.filmAdded = true;
+                $http.post(server, parameter).success(function(data, status, headers, config) {
+                    if(checkData(data))
+                    {
+                        $scope.showToast("Inserimento avvenuto con successo");
+                    }
+                    else
+                        $scope.showToast(data.error);
+
+                    $scope.filmAdded = true;
+
+                    clearScope();
+
+                }).error(function(data, status, headers, config) {
+                    console.log("Film not added");
+                });
+
+            }).error(function(data, status, headers, config) {
+            console.log("No data found..");
+        });
+
+        function callAtTimeout() {
+            console.log("Timeout occurred");
+        }
+        
+        function clearScope()
+        {
             $scope.year = "";
             $scope.title = "";
             $scope.running_time = "";
             $scope.director = "";
             $scope.lang = "";
-            //$scope.source = "";
             $scope.data.repeatSelect = "";
             self.searchText = "";
+        }
 
-        }).error(function(data, status, headers, config) {
-            console.log("Film not added");
-        });
     }
 
     $scope.data = {
@@ -146,6 +166,9 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
 
         return true;
     }
+
+
+
 
 });
 

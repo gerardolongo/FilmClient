@@ -31,10 +31,10 @@
                 </table>
 				<div ng-hide="filmDeleted">
                     <div class="playbill">
-                        <img ng-src={{img}} ng-show="img != ''"/>
+                        <img ng-src={{film.img}} ng-show="img != ''"/>
                     </div>
 					<div class="plotContainer">
-						<p class="plot">{{desc}}</p>
+						<p class="plot">{{film.desc}}</p>
 					</div>
 				</div>
 				<!--
