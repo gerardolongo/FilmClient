@@ -1,11 +1,15 @@
 input[type="text"],input[type="number"]  {
 	text-transform: uppercase;
-	width:150px;
+	width:auto;
 }
 
 .navbar{
     background-color: red;
     border-color: black;
+}
+
+.title{
+	margin-left:10%;
 }
 
 .table-responsive
@@ -53,18 +57,35 @@ input[type="text"],input[type="number"]  {
 	font-size:medium;
 }
 
-#feedContainer img{
+
+
+#feedContainer table{
+	display: none;
+}
+
+
+
+#feedContainer p img{
 	width: 50%;
 	height: 50%;
 }
 
+#feedContainer p:nth-last-child(1),
+#feedContainer p:nth-last-child(2),
+#feedContainer p:nth-last-child(3){
+	display:none;
+}
 
-#viewAll
+
+.viewFilm
 {
 	margin-left:10%;
 }
 
-#viewAll img{
+.viewFilm img{
 	max-height: 200px;
 }
+
+
+
 

@@ -4,7 +4,7 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
 
     self.directors     = null;
     self.selectedItem  = null;
-    self.result        = loadAll();
+    self.result        = null;
     self.searchText    = null;
     self.querySearch   = querySearch;
     self.searchTextChange = searchTextChange;
@@ -91,31 +91,17 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
     };
 
 
+    $scope.init = function(){
+        self.result = loadAll();
+    }
+
+
     function loadAll(){
         $http.get(server)
             .then(function(res){
                 if(res.data.length > 0) {
                     self.data = res.data;
-                    self.directors = "";
-                    var prevEl = self.data != null ? self.data[0].director : null;
-                    var currEl = "";
-                    var i = 0;
-                    angular.forEach(self.data, function (value, key) {
-                        currEl = value.director;
-                        if(!(typeof currEl === "undefined")) {
-                            if (i > 0) {
-                                if (prevEl != currEl) {
-                                    self.directors = self.directors + value.director + ',';
-                                    currEl = value.director;
-                                    prevEl = currEl;
-                                }
-                            }
-                            else {
-                                self.directors = self.directors + value.director + ',';
-                            }
-                        }
-                        i++;
-                    });
+                    self.directors = deleteDuplicate(res.data);
 
                     self.directors = self.directors.substring(0, self.directors.length - 1);
                     self.result = self.directors.split(",").map(function (state) {
@@ -166,9 +152,6 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
 
         return true;
     }
-
-
-
 
 });
 

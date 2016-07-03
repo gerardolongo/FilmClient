@@ -6,6 +6,8 @@
 					<input type="text" ng-model="director" placeholder="Regista" ng-change="director=director.toUpperCase();" required/>
 				</md-input-container>
 				<md-button type="submit" class="md-raised md-primary"> Cerca </md-button>
+
+				<!--
 				<table class="table">
 					<thead>
 						<tr>
@@ -18,7 +20,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="film in filmByDirector | orderBy:'year'">
+						<tr ng-repeat="film in film| orderBy:'year'">
 							<td>{{ film.title }}</td>
 							<td>{{ film.year }}</td>
 							<td>{{ film.running_time }}</td>
@@ -28,11 +30,13 @@
 						</tr>
 					</tbody>
 				</table>
+				-->
 				<!--
 				<div id="alert" class="alert alert-info" ng-show="dirFound" ng-hide="director!= ''">
 					<h2> Regista non trovato </h2>
 				</div>
 				-->
+				<view-film></view-film>
 			</div>
 		</div>
 	</div>

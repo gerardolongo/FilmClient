@@ -20,20 +20,8 @@ app.controller('viewController', function($scope,$http,$mdDialog) {
         }).error(function(data, status, headers, config) {
         console.log("No data found..");
     });
-
-
-    $scope.showAlert = function(film) {
-        $mdDialog.show(
-            $mdDialog.alert()
-                .parent(angular.element(document.querySelector('.main')))
-                .clickOutsideToClose(true)
-                .title(film.title)
-                .textContent(film.desc)
-                .ariaLabel('Alert Dialog Demo')
-                .ok('OK')
-
-        );
-    };
-
+    
 
 });
+
+

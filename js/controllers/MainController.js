@@ -21,7 +21,7 @@ app.factory('FeedLoader', function ($resource) {
                 {title: 'ScreenWeek', url: 'https://blog.screenweek.it/feed'}];
             if (feeds.length === 0) {
                 for (var i=0; i<feedSources.length; i++) {
-                    FeedLoader.fetch({q: feedSources[i].url, num: 5}, {}, function (data) {
+                    FeedLoader.fetch({q: feedSources[i].url, num: 10}, {}, function (data) {
                         var feed = data.responseData.feed;
                         feeds.push(feed);
                         console.log(feed);

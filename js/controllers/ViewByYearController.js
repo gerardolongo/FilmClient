@@ -6,7 +6,7 @@ app.controller('viewByYearController',function($scope,$http){
     $scope.search = function (){
         $http.get(server + '/year/' + $scope.year)
             .success(function(data, status, headers, config) {
-                $scope.filmByYear = data;
+                $scope.films = data;
             }).error(function(data, status, headers, config) {
             console.log("No data found..");
         });

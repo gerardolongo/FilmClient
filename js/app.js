@@ -28,8 +28,8 @@ app.config(function($routeProvider) {
          controller: 'viewByDirectorController'
 	  }).
 	  when('/viewMyMovies', {
-			templateUrl: 'viewMyMovies.html',
-			controller: 'viewMyMovies'
+		templateUrl: 'viewMyMovies.html',
+		controller: 'viewMyMovies'
 	  }).
       otherwise({
           redirectTo: '/'
@@ -37,6 +37,3 @@ app.config(function($routeProvider) {
 });
 
 server = "http://192.168.1.130:2380/film";
-
-
-

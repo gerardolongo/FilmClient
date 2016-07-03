@@ -3,18 +3,19 @@
  */
 
 app.controller('viewByDirectorController',function($scope,$http,$mdToast){
+    debugger;
     $scope.search = function (){
         $http.get(server + '/director/' + $scope.director)
             .success(function(data, status, headers, config) {
                 if(data.length != 0) {
-                    $scope.filmByDirector = data;
+                    $scope.films = data;
                     $scope.dirFound = false;
                 }
                 else
                 {
                     $scope.dirFound = true;
                     $scope.showToast("Regista non trovato");
-                    $scope.filmByDirector = "";
+                    $scope.films = "";
                 }
 
             }).error(function(data, status, headers, config) {
