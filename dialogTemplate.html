@@ -5,38 +5,33 @@
                 <span flex></span>
             </div>
         </md-toolbar>
-        <md-dialog-content>
-            <div class="md-dialog-content">
-                <table>
-                    <tr>
-                       <td>
-                           <md-input-container>
-                                <input type="text" ng-model="film.director" placeholder="Regista" disabled />
-                           </md-input-container>
-                       </td>
-                        <td>
-                            <md-input-container>
-                                <input type="text" ng-model="film.running_time" placeholder="Durata" disabled />
-                            </md-input-container>
-                        </td>
-                        <td>
-                            <md-input-container>
-                                <input type="text" ng-model="film.source" placeholder="Source" disabled />
-                            </md-input-container>
-                        </td>
-                        <td>
-                            <md-input-container>
-                                <input type="text" ng-model="film.lang" placeholder="Lingua" disabled />
-                            </md-input-container>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-        </md-dialog-content>
-        <md-dialog-content>
-            <div class="md-dialog-content">
+        <div class="md-dialog-content">
+            <md-dialog-content>
+                    <table class="table">
+                        <tr>
+                           <td>
+                               <label> Regia: </label>
+                               {{film.director}}
+                           </td>
+                            <td>
+                                <label> Durata: </label>
+                                {{film.running_time}}
+                            </td>
+                            <td>
+                                <label> Lingua: </label>
+                                {{film.lang}}
+                            </td>
+                            <td>
+                                <label> Sorgente: </label>
+                                {{film.source}}
+                            </td>
+                        </tr>
+                    </table>
+            </md-dialog-content>
+        </div>
+        <div class="md-dialog-content">
+            <md-dialog-content>
                 {{film.desc}}
-            </div>
-        </md-dialog-content>
+            </md-dialog-content>
+        </div>
 </md-dialog>

@@ -83,7 +83,8 @@ input[type="text"],input[type="number"]  {
 }
 
 .viewFilm img{
-	max-height: 200px;
+	height: 200px;
+	width: 150px;
 }
 
 

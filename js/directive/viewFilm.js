@@ -21,7 +21,7 @@ app.directive('viewFilm', ['$mdDialog','$mdMedia',function($mdDialog,$mdMedia) {
                             '</tr>' +
                             '<tr>' +
                                 '<td>' +
-                                '   <label>{{item.title}}</label>' +
+                                '   <label class="title">{{item.title}}</label>' +
                                 '</td>' +
                             '</tr>' +
                         '</table>' +
