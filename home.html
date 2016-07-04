@@ -1,10 +1,26 @@
+
+<!--
 <div ng-controller="FeedCtrl">
     <div class="container" ng-repeat="feed in feeds | orderBy:'title'">
-        <!--<a href="{{feed.link}}" target="_blank">{{feed.title}}</a></h2>-->
+      <a href="{{feed.link}}" target="_blank">{{feed.title}}</a></h2>
         <span ng-repeat="item in feed.entries" >
-            <!--<a ng-bind-html="item.title" href="{{item.link}}" target="_blank"></a> (<span>{{item.publishedDate | date:'d-MM-yyyy'}}</span>)<br />-->
+            <a ng-bind-html="item.title" href="{{item.link}}" target="_blank"></a> (<span>{{item.publishedDate | date:'d-MM-yyyy'}}</span>)<br />
             <h2 class="title">{{item.title}}</h2>
             <div class="jumbotron" id="feedContainer" ng-bind-html="item.content"></div>
         </span>
     </div>
+</div>
+-->
+
+<div ng-controller="FeedCtrl">
+  <div  ng-repeat="feed in feeds | orderBy:'title'">
+    <ang-accordion close-icon-url="images/right-icon.png" open-icon-url="images/down-icon.png">
+      <div ng-repeat="item in feed.entries">
+          <collapsible-item item-title="{{item.title}}">
+              <h2 class="title">{{item.title}}</h2>
+              <div class="jumbotron" id="feedContainer" ng-bind-html="item.content"></div>
+          </collapsible-item>
+      </div>
+    </ang-accordion>
+  </div>
 </div>
