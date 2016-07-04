@@ -20,7 +20,9 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-sanitize.js"></script>
+	<script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
     <script type="text/javascript" src="js/lib/ang-accordion.js"></script>
+    <script type="text/javascript" src="js/lib/angular-spinner.js"></script>
   </head>
   <body ng-app="ForecastApp">
 		<div class="main">
@@ -57,14 +59,15 @@
 			<br/>
 			<br/>
 			<div class="col-md-9">
-				 <div ng-view></div>
+				<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="spinner-1"></span>
+				<div ng-view></div>
 			</div>
 		</div>
     <!-- Modules -->
 	<script src="js/app.js"></script>
 
 	<!-- Controllers -->
-  <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/MainController.js"></script>
 	<script src="js/controllers/ViewController.js"></script>
 	<script src="js/controllers/ViewByTitleController.js"></script>
 	<script src="js/controllers/ViewByYearController.js"></script>
@@ -78,7 +81,7 @@
 	<script src="js/directive/viewFilm.js"></script>
 
 	<!--  Utility -->
-	<script src="js/utility.js"></script>
+	<script src="js/lib/utility.js"></script>
 
   </body>
 </html>

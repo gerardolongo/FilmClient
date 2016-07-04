@@ -1,4 +1,4 @@
-app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$mdToast){
+app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$mdToast,usSpinnerService){
 
     var self = this;
 
@@ -36,9 +36,12 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
         else
             director = self.selectedItem.display;
 
+        usSpinnerService.spin('spinner-1');
+
         $http.get(server + '/scraping/mymovies/' + $scope.title)
             .success(function(data, status, headers, config) {
                 $timeout(callAtTimeout, 7000);
+                usSpinnerService.stop('spinner-1');
                 var desc = data.desc;
                 var img = data.img;
                 var parameter = JSON.stringify({title:$scope.title, year:$scope.year,

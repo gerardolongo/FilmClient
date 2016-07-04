@@ -1,4 +1,4 @@
-var app = angular.module('ForecastApp', ['ngRoute','ngMessages','ngMaterial','ngResource','ngSanitize','angAccordion']);
+var app = angular.module('ForecastApp', ['ngRoute','ngMessages','ngMaterial','ngResource','ngSanitize','angAccordion','angularSpinner']);
 
 
 app.config(function($routeProvider) {

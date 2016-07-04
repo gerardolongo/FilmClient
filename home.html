@@ -13,7 +13,7 @@
 -->
 
 <div ng-controller="FeedCtrl">
-  <div  ng-repeat="feed in feeds | orderBy:'title'">
+  <div ng-repeat="feed in feeds | orderBy:'title'">
     <ang-accordion close-icon-url="images/right-icon.png" open-icon-url="images/down-icon.png">
       <div ng-repeat="item in feed.entries">
           <collapsible-item item-title="{{item.title}}">
