@@ -15,9 +15,9 @@
 <div ng-controller="FeedCtrl">
   <div ng-repeat="feed in feeds | orderBy:'title'">
     <ang-accordion close-icon-url="images/right-icon.png" open-icon-url="images/down-icon.png">
-      <div ng-repeat="item in feed.entries">
+      <div ng-repeat="item in feed.entries" ng-style="collapse">
           <collapsible-item item-title="{{item.title}}">
-              <h2 class="title">{{item.title}}</h2>
+              <h2 class="feedTitle">{{item.title}}</h2>
               <div class="jumbotron" id="feedContainer" ng-bind-html="item.content"></div>
           </collapsible-item>
       </div>

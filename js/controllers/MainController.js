@@ -35,5 +35,6 @@ app.factory('FeedLoader', function ($resource) {
         $scope.feeds = FeedList.get();
         $scope.$on('FeedList', function (event, data) {
             $scope.feeds = data;
+            $scope.collapse = "{width:200px}";
         });
     });

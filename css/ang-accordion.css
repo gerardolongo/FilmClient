@@ -37,9 +37,9 @@
 
 .collapsible-item .body {
   position: relative;
-  top: -4px;
+  top: 0px;
   max-height: 0;
-  overflow: hidden;
+  overflow: auto;
   border: 1px solid #ccc;
   border-top: 0;
   z-index: -1;

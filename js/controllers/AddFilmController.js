@@ -9,13 +9,10 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
     self.querySearch   = querySearch;
     self.searchTextChange = searchTextChange;
 
-
     function searchTextChange(text) {
         if (typeof text != 'undefined') {
             self.searchText = text;
-
             var uppercase = self.searchText.toUpperCase();
-
             if (text !== uppercase) {
                 self.searchText = uppercase;
             }
@@ -26,7 +23,6 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
         //self.selectedItem = item;
         console.log(item)
     }
-
 
     self.addFilm = function (){
         var director = "";
@@ -71,7 +67,7 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
         function callAtTimeout() {
             console.log("Timeout occurred");
         }
-        
+
         function clearScope()
         {
             $scope.year = "";
@@ -157,8 +153,3 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
     }
 
 });
-
-
-
-
-
