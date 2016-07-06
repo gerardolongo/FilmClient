@@ -18,7 +18,7 @@
       <div ng-repeat="item in feed.entries" ng-style="collapse">
           <collapsible-item item-title="{{item.title}}">
               <h2 class="feedTitle">{{item.title}}</h2>
-              <div class="jumbotron" id="feedContainer" ng-bind-html="item.content"></div>
+              <div  id="feedContainer" ng-bind-html="item.content"></div>
           </collapsible-item>
       </div>
     </ang-accordion>

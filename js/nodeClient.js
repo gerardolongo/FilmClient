@@ -8,7 +8,7 @@
  app.use(express.static(__dirname + '/../'));
  console.log(__dirname);
  app.get('*', function(request, response) {
-     response.sendFile(path.join(__dirname + '/../FilmLibrary.html'));
+     response.sendFile(path.join(__dirname + '/../index.html'));
  });
 
  // start the server
