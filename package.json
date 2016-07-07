@@ -1,0 +1,25 @@
+{
+  "name": "film_client",
+  "description": "Web application for storage personal film library",
+  "version": "1.0.9",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gerardo Longo",
+  "license": "UNLICENSED",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gerardolongo/FilmClient"
+  },
+   "dependencies": {
+		"express":"^4.14.0",
+		"path":"^0.12.7"
+  },
+  "bugs": {
+    "url": "https://github.com/gerardolongo/FilmClient/issues"
+  },
+  "homepage": "https://github.com/gerardolongo/FilmClient"
+}
