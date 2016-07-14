@@ -33,6 +33,16 @@ function deleteDuplicate(obj)
 	return directors;
 }
 
+function arrayToString(obj)
+{
+	var directors = "";
+	for(var i = 0; i < obj.length; i++)
+	{
+		directors = obj[i].name + ",";
+	}
+	return directors;
+}
+
 
 function toast($mdToast) {
 	var toast = $mdToast.simple()

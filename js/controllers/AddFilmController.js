@@ -96,20 +96,20 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
 
 
     function loadAll(){
-        $http.get(server)
+        $http.get("http://127.0.0.1:2380/director")
             .then(function(res){
+                debugger;
                 if(res.data.length > 0) {
                     self.data = res.data;
-                    self.directors = deleteDuplicate(res.data);
-
+                    self.directors = arrayToString(res.data);
                     self.directors = self.directors.substring(0, self.directors.length - 1);
                     self.result = self.directors.split(",").map(function (state) {
                         return {
                             value: state.toLowerCase(),
                             display: state
                         };
-
                     });
+                    
                 }
             });
     }
