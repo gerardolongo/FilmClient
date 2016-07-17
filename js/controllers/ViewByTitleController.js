@@ -14,7 +14,6 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
     $scope.displayElement();
 
     $scope.search = function (){
-
         $http.get(server + '/title/' + $scope.title)
             .success(function(data, status, headers, config) {
                 if(data == "") {
@@ -32,7 +31,6 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
             }).error(function(data, status, headers, config) {
             console.log("No data found..");
         });
-
     }
 
 

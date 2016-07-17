@@ -1,59 +1,10 @@
-<!-- metti in una direttiva -->
 <div class="form-group">
 	<div class="input-group">
 		<div class="input-group-addon"><i class="fa fa-search"></i></div>
 		<input type="text" class="form-control" placeholder="Filtra film" ng-model="title">
 	</div>
 </div>
-
 <view-film></view-film>
-
-<!--
-<div ng-controller="viewController" id="viewAll">
-	<div ng-repeat="item in films | orderBy:'year' | filter:title ">
-		<div ng-class="{ 'row': ($index + 1) % 3 == 0 }">
-			<div class="col-md-3" filter="{title:'text'}">
-				<table>
-					<tr>
-						<td>
-							<md-button ng-click="showAlert(item)">
-								<img  ng-src={{item.img}} />
-							</md-button>
-
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>{{item.title}}</label>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</div>
+<div id="paginator" data-pagination="" data-num-pages="numPages()"
+	 data-current-page="currentPage" data-max-size="maxSize" data-boundary-links="true"> +
 </div>
--->
-<!--
-<table class="table" ng-controller="viewController">
-	<thead>
-		<tr>
-			<th>Titolo</th>
-			<th>Anno</th>
-			<th>Durata</th>
-			<th >Regista</th>
-			<th >Lingua</th>
-			<th >Fonte</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="film in films | orderBy:'year' | filter:title ">
-			<td filter="{ title: 'text'}">{{ film.title }}</td>
-			<td>{{ film.year }}</td>
-			<td>{{ film.running_time }}</td>
-			<td>{{ film.director }}</td>
-			<td>{{ film.lang }}</td>
-			<td>{{ film.source }}</td>
-		</tr>
-	</tbody>
-</table>
--->

@@ -30,22 +30,6 @@ app.directive('viewFilm', ['$mdDialog','$mdMedia',function($mdDialog,$mdMedia) {
             '</div>' +
         '</div>';
 
-    /*
-    directive.link = function (scope, element, attrs) {
-        scope.showAlert = function (film) {
-            $mdDialog.show(
-                $mdDialog.alert()
-                    .parent(angular.element(document.querySelector('.main')))
-                    .clickOutsideToClose(true)
-                    .title(film.title)
-                    .textContent(film.desc)
-                    .ariaLabel('Dettaglio')
-                    .ok('OK')
-            );
-        };
-    }
-    */
-
     directive.link = function ($scope, element, attrs) {
         $scope.showCustom = function($event,film) {
             $mdDialog.show({

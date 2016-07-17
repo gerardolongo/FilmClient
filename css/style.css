@@ -89,3 +89,8 @@ input[type="text"],input[type="number"]  {
 .collapse{
 	width: auto;
 }
+
+#paginator{
+	position:relative;
+	margin-top:30%;
+}
