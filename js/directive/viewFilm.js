@@ -15,7 +15,7 @@ app.directive('viewFilm', ['$mdDialog','$mdMedia',function($mdDialog,$mdMedia) {
                             '<tr>' +
                                 '<td>' +
                                     '<md-button ng-click="showCustom($event,item)">' +
-                                    '   <img ng-src={{item.img}} />' +
+                                    '   <img ng-src={{item.img}} class="img-responsive" />' +
                                     '</md-button>' +
                                 '</td>' +
                             '</tr>' +
@@ -43,7 +43,6 @@ app.directive('viewFilm', ['$mdDialog','$mdMedia',function($mdDialog,$mdMedia) {
             });
         };
     }
-
 
     return directive;
 }]);

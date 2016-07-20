@@ -22,6 +22,8 @@ app.controller('viewController', function($scope,$http,$mdDialog) {
                 ,$scope.maxSize = 5;
 
             $scope.numPages = function () {
+                var paginator = angular.element(document.querySelector('#paginator ul'));
+                paginator.addClass('pagination');
                 return Math.ceil(data.length / $scope.numPerPage);
             };
 
@@ -33,8 +35,8 @@ app.controller('viewController', function($scope,$http,$mdDialog) {
             });
 
         }).error(function(data, status, headers, config) {
-        console.log("No data found..");
-    });
+            console.log("No data found..");
+        });
 });
 
 
