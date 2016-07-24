@@ -3,7 +3,7 @@
  */
 
 
-app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
+app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout,toast){
 
     $scope.displayElement = function () {
         $scope.display = {
@@ -21,7 +21,7 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
                     $scope.foundFilm = false;
                     $scope.desc = "";
                     $scope.img = "";
-                    $scope.showToast("Film non trovato");
+                    toast.showToast("Film non trovato");
                 }
                 else {
                     $scope.foundFilm = true;
@@ -29,7 +29,7 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
                     $scope.film = data;
                 }
             }).error(function(data, status, headers, config) {
-            console.log("No data found..");
+                console.log("No data found..");
         });
     }
 
@@ -38,23 +38,13 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout){
         $http.delete(server + '/' + id)
             .success(function(data, status, headers, config) {
                 $scope.filmDeleted = true;
-                $scope.showToast("Cancellazione avvenuta correttamente");
+                toast.showToast("Cancellazione avvenuta correttamente");
                 $scope.title = "";
                 $scope.film = "";
                 $scope.foundFilm = false;
             }).error(function(data, status, headers, config) {
-            console.log("No data found..");
+                console.log("No data found..");
         });
     }
 
-
-    $scope.showToast = function(msg) {
-        var toast = $mdToast.simple()
-            .textContent(msg)
-            .action('OK')
-            .highlightAction(false);
-        $mdToast.show(toast).then(function(response) {
-
-        });
-    }
 });

@@ -36,7 +36,7 @@ app.directive('viewFilm', ['$mdDialog','$mdMedia',function($mdDialog,$mdMedia) {
                 clickOutsideToClose: true,
                 scope: $scope,
                 preserveScope: true,
-                templateUrl: 'dialogTemplate.html',
+                templateUrl: 'Template/dialogTemplate.html',
                 controller: function DialogController($scope, $mdDialog) {
                     $scope.film = film;
                 }

@@ -1,4 +1,4 @@
-app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$mdToast,usSpinnerService){
+app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,toast,usSpinnerService){
 
     var self = this;
 
@@ -47,10 +47,10 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
                 $http.post(server, parameter).success(function(data, status, headers, config) {
                     if(checkData(data))
                     {
-                        $scope.showToast("Inserimento avvenuto con successo");
+                        toast.showToast("Inserimento avvenuto con successo");
                     }
                     else
-                        $scope.showToast(data.error);
+                        toast.showToast(data.error);
 
                     $scope.filmAdded = true;
 
@@ -96,9 +96,8 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
 
 
     function loadAll(){
-        $http.get("http://127.0.0.1:2380/director")
+        $http.get("http://192.168.1.130:2380/director")
             .then(function(res){
-                debugger;
                 if(res.data.length > 0) {
                     self.data = res.data;
                     self.directors = arrayToString(res.data);
@@ -109,7 +108,6 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
                             display: state
                         };
                     });
-                    
                 }
             });
     }
@@ -130,17 +128,6 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,$md
         return function filterFn(state) {
             return (state.display.indexOf(uppercaseQuery) === 0);
         };
-    }
-
-
-    $scope.showToast = function(msg) {
-        var toast = $mdToast.simple()
-            .textContent(msg)
-            .action('OK')
-            .highlightAction(false);
-        $mdToast.show(toast).then(function(response) {
-
-        });
     }
 
     function checkData(data){

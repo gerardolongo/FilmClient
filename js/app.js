@@ -28,10 +28,6 @@ app.config(function($routeProvider) {
 		 templateUrl: 'viewByDirector.html',
          controller: 'viewByDirectorController'
 	  }).
-	  when('/viewMyMovies', {
-		templateUrl: 'viewMyMovies.html',
-		controller: 'viewMyMovies'
-	  }).
       otherwise({
           redirectTo: '/'
       });
