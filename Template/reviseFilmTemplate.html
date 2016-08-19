@@ -22,7 +22,7 @@
                 <span ng-show="form.running_time.$error.required || form.running_time.$error.integer"> </span>
             </td>
             <td>
-                <div>
+                <div ng-show="showAutocompl">
                     <md-content class="md-padding">
                         <div layout-gt-sm="row" >
                             <md-autocomplete required md-input-name="autocompleteField"
@@ -37,6 +37,11 @@
                                 </md-item-template>
                             </md-autocomplete>
                         </div>
+                    </md-content>
+                </div>
+                <div ng-hide="showAutocompl">
+                    <md-content class="md-padding">
+                        <input type="text" ng-model="director" placeholder="Durata" readonly/>
                     </md-content>
                 </div>
             </td>

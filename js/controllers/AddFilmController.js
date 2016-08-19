@@ -46,9 +46,7 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,toa
 
                 $http.post(server, parameter).success(function(data, status, headers, config) {
                     if(checkData(data))
-                    {
                         toast.showToast("Inserimento avvenuto con successo");
-                    }
                     else
                         toast.showToast(data.error);
 
@@ -81,17 +79,10 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,toa
 
     }
 
-    $scope.data = {
-        repeatSelect: null,
-        availableOptions: [
-            {id: 'TV', name: 'TV'},
-            {id: 'OR', name: 'OR'},
-        ],
-    };
-
-
     $scope.init = function(){
         self.result = loadAll();
+        $scope.showAutocompl = true;
+        $scope.data = populateSelect();
     }
 
 
@@ -132,10 +123,8 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,toa
 
     function checkData(data){
         if (data!= "")
-        {
             return false;
-        }
-
+        
         return true;
     }
 

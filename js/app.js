@@ -28,6 +28,10 @@ app.config(function($routeProvider) {
 		 templateUrl: 'viewByDirector.html',
          controller: 'viewByDirectorController'
 	  }).
+	  when('/updateFilm', {
+		templateUrl: 'updateFilm.html',
+		controller: 'updateFilmController'
+	  }).
       otherwise({
           redirectTo: '/'
       });

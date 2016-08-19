@@ -15,6 +15,21 @@ app.factory('forecastViewAll', ['$http', function($http) {
 }]);
 */
 
+app.factory('searchFilmByTitle', function($http) {
+	var film = function(title) {
+		return $http.get(server + '/title/' + title);
+	};
+
+	return {
+		film: film
+	};
+});
+
+//TO-DO
+app.factory('updateFilm',function($http){
+
+});
+
 
 
 

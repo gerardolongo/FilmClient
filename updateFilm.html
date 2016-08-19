@@ -1,7 +1,11 @@
-<form ng-controller="updateFilmController as ctrl" ng-submit="ctrl.updateFilm()" name="updateFilmForm" >
+<form ng-submit="search()" >
+    <md-input-container>
+        <input type="text" ng-model="searchTitle" placeholder="Titolo" ng-change="searchTitle=searchTitle.toUpperCase();" required />
+        <md-button type="submit" class="md-raised md-primary"> Cerca </md-button><br/>
+      </md-input-container>
     <div class="container" data-ng-init="init()">
-        <div class="row" id="login-container">
-            <revise-film></revise-film>
+        <div class="row" id="updateFilmContainer">
+
         </div>
     </div>
 </form>
