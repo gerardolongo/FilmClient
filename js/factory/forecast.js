@@ -27,7 +27,14 @@ app.factory('searchFilmByTitle', function($http) {
 
 //TO-DO
 app.factory('updateFilm',function($http){
+	var put = function(id, parameter){
+		debugger;
+		return $http.put(server + '/' + id, parameter);
+	};
 
+	return {
+		put : put
+	};
 });
 
 

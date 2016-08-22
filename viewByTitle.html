@@ -6,6 +6,7 @@
 					<input type="text" ng-model="title" placeholder="Titolo" ng-change="title=title.toUpperCase();" required />
 					<md-button type="submit" class="md-raised md-primary"> Cerca </md-button><br/>
                     <md-button type="submit" ng-hide="!foundFilm" class="md-raised md-primary" ng-click="deleteFilm(film._id)"> Elimina </md-button>
+                    <md-button type="submit" ng-hide="!foundFilm" class="md-raised md-primary" ng-click="updateFilm(film.title)"> Modifica </md-button>
                 </md-input-container>
                 <table class="table">
                     <thead>

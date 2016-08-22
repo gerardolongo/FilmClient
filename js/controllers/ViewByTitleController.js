@@ -3,7 +3,7 @@
  */
 
 
-app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout,toast){
+app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout,toast,$window){
 
     $scope.displayElement = function () {
         $scope.display = {
@@ -46,5 +46,8 @@ app.controller('viewByTitleController',function($scope,$http,$mdToast,$timeout,t
                 console.log("No data found..");
         });
     }
-
+    
+    $scope.updateFilm = function(title){
+        $window.location.href = '/#/updateFilm?title=' + $scope.title;
+    }
 });

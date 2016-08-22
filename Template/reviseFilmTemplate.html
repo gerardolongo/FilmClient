@@ -22,7 +22,7 @@
                 <span ng-show="form.running_time.$error.required || form.running_time.$error.integer"> </span>
             </td>
             <td>
-                <div ng-show="showAutocompl">
+                <div ng-if="showAutocompl">
                     <md-content class="md-padding">
                         <div layout-gt-sm="row" >
                             <md-autocomplete required md-input-name="autocompleteField"
@@ -64,7 +64,7 @@
         </tr>
         <tr>
             <td>
-                <md-button type="submit" class="md-raised md-primary" ng-disabled="addFilmForm.$invalid"> Aggiungi </md-button>
+                <md-button type="submit" id="reviseFilmButton" class="md-raised md-primary" ng-disabled="reviseFilmForm.$invalid"> {{buttonText}} </md-button>
             </td>
         </tr>
         </tbody>

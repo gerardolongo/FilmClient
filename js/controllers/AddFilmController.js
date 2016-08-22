@@ -9,6 +9,8 @@ app.controller('addFilmController',function($scope,$http,$filter,$timeout,$q,toa
     self.querySearch   = querySearch;
     self.searchTextChange = searchTextChange;
 
+    $scope.buttonText = "Aggiungi";
+
     function searchTextChange(text) {
         if (typeof text != 'undefined') {
             self.searchText = text;
