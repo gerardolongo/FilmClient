@@ -7,26 +7,24 @@
         </md-toolbar>
         <div class="md-dialog-content">
             <md-dialog-content>
-                    <table class="table">
-                        <tr>
-                           <td>
-                               <label> Regia: </label>
-                               {{film.director}}
-                           </td>
-                            <td>
-                                <label> Durata: </label>
-                                {{film.running_time}}
-                            </td>
-                            <td>
-                                <label> Lingua: </label>
-                                {{film.lang}}
-                            </td>
-                            <td>
-                                <label> Sorgente: </label>
-                                {{film.source}}
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label> Regia: </label>
+                            {{film.director}}
+                        </div>
+                        <div class="col-md-4">
+                            <label> Durata: </label>
+                            {{film.running_time}}
+                        </div>
+                        <div class="col-md-4">
+                            <label> Lingua: </label>
+                            {{film.lang}}
+                        </div>
+                        <div class="col-md-4">
+                            <label> Sorgente: </label>
+                            {{film.source}}
+                        </div>
+                    </div>
             </md-dialog-content>
         </div>
         <div class="md-dialog-content">

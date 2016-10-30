@@ -1,6 +1,6 @@
-input[type="text"],input[type="number"]  {
+input[type="text"],input[type="number"],md-input-container,md-content,md-item-template{
 	text-transform: uppercase;
-	width:auto;
+	width:200px;
 }
 
 .navbar{
@@ -21,8 +21,7 @@ input[type="text"],input[type="number"]  {
 	width:auto;
 }
 
-#alert
-{
+#alert {
 	margin-top: 100px;
 }
 
@@ -55,12 +54,14 @@ input[type="text"],input[type="number"]  {
 	font-size:medium;
 }
 
-
+#feedContainer img{
+	width: 80%;
+	height: auto;
+}
 
 #feedContainer table{
 	display: none;
 }
-
 
 
 #feedContainer p img{
@@ -92,3 +93,31 @@ input[type="text"],input[type="number"]  {
 	position:relative;
 	margin-top:30%;
 }
+
+.fieldset {
+	border: 2px solid #9d9d9d;
+	padding: 10px;
+}
+
+
+
+/*feed position*/
+.feedContainer {
+	position: relative;
+	right:auto;
+}
+
+.center {
+	position: absolute;
+	top: 20%;
+	left: auto;
+	right:auto;
+	font-size: 18px;
+}
+
+.imgBackground {
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+}
+
