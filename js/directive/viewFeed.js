@@ -10,7 +10,7 @@ app.directive('viewFeed', ['$mdDialog','$mdMedia',function($mdDialog,$mdMedia) {
                         '<div ng-repeat="feed in feeds ">'+
                             '<div ng-repeat="item in feed.entries">'+
                                 '<md-button class="md-raised" id="resizeButton" ng-click="showFeed($event,item)" >{{item.title}}' +
-                                '</md-button>' +
+                                '</md-button>'+
                             '</div>'+
                         '</div>';
 

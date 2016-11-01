@@ -114,11 +114,17 @@ input[type="text"],input[type="number"],md-input-container,md-content,md-item-te
 	opacity: 0.4;
 }
 
+#resizeButton{
+	text-overflow: ellipsis;
+	width: 90%;
+	text-align: left;
+}
+
 @media screen and (max-width: 480px) {
 	#resizeButton{
 		color : rgb(49, 46, 46);
 		border-radius: 10px 0 0 10px;
-		font-size: 6px;
+		font-size: 7px;
 	}
 
 	#dialogTitle{
