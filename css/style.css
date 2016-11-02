@@ -1,3 +1,17 @@
+
+html, body{
+	height: 50%;
+}
+
+.main{
+	overflow: auto;
+	padding-bottom: 50px;
+}
+
+.wrap{
+	height: 100%;
+}
+
 input[type="text"],input[type="number"],md-input-container,md-content,md-item-template{
 	text-transform: uppercase;
 	width:200px;
@@ -118,6 +132,20 @@ input[type="text"],input[type="number"],md-input-container,md-content,md-item-te
 	text-overflow: ellipsis;
 	width: 90%;
 	text-align: left;
+}
+
+.footer {
+	position: relative;
+	clear:both;
+	height: 50px;
+	background-color: #222222 ;
+}
+
+.footerContent{
+	text-align: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	color:white;
 }
 
 @media screen and (max-width: 480px) {
