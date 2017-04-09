@@ -17,7 +17,6 @@ app.factory('FeedLoader', function ($resource) {
         this.get = function() {
             var feeds = [];
             var feedSources = [
-                {},
                 {title: 'ScreenWeek', url: 'https://blog.screenweek.it/feed'}];
             if (feeds.length === 0) {
                 for (var i=0; i<feedSources.length; i++) {

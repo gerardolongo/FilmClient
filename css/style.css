@@ -134,12 +134,12 @@ input[type="text"],input[type="number"],md-input-container,md-content,md-item-te
 	text-align: left;
 }
 
+
 .footer {
-	position: relative;
-	clear:both;
 	height: 50px;
 	background-color: #222222 ;
 }
+
 
 .footerContent{
 	text-align: right;
